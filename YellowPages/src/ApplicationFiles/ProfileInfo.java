@@ -107,7 +107,7 @@ public class  ProfileInfo {
         this.apartmentNumber = apartmentNumber;
         this.phoneNumber = phoneNumber;
 
-        this.address = "Address: " + streetName + " " + streetNumber + " Apartment number: " + apartmentNumber + " ZipCode: " + zipCode + " City: " + city;
+        this.address = ", Address: " + streetName + " " + streetNumber + ", Apartment number: " + apartmentNumber + ", ZipCode: " + zipCode + ", City: " + city;
 
     }
 }
