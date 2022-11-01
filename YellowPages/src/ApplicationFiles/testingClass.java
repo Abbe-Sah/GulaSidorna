@@ -7,6 +7,9 @@ public class testingClass{
         Scanner scanner = new Scanner(System.in);
         Profile profile = new Profile();
 
+        Authentication.login("teamtfsadfwo");
+        System.out.println(Authentication.isAdmin);
+
         while (true){
             System.out.println("Name");
             String name = scanner.next();
@@ -30,7 +33,8 @@ public class testingClass{
 
             profile.addProfile(profileInfo);
             profile.printProfileList();
-            
+
+
 
         }
 
