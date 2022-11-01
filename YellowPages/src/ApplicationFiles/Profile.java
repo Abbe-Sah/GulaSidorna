@@ -11,7 +11,7 @@ public class Profile {
         profileList.add(profileInfo);
     }
 
-    public void getProfileList() {
+    public void printProfileList() {
         for(ProfileInfo profiles : profileList){
             System.out.println(profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
         }

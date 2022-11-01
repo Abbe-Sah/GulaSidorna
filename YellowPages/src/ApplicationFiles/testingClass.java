@@ -27,9 +27,9 @@ public class testingClass{
             System.out.println("City");
             String city = scanner.next();
             ProfileInfo profileInfo = new ProfileInfo(name,lastName,age,phoneNumber,streetName,streetNumber,apartmentNumber,zipCode,city);
-            profile.addProfile(profileInfo);
 
-            profile.getProfileList();
+            profile.addProfile(profileInfo);
+            profile.printProfileList();
 
         }
 
