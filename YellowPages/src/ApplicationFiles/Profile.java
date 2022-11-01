@@ -13,13 +13,9 @@ public class Profile {
     }
 
     public void printProfileList() {
-
-        profileList.stream().forEach(System.out::println);
-
-
-//        for(ProfileInfo profiles : profileList){
-//            System.out.println(profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
-//        }
+        for(ProfileInfo profiles : profileList){
+            System.out.println(profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+        }
     }
 
     public ArrayList<ProfileInfo> getProfileList() {
