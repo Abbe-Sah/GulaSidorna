@@ -1,6 +1,6 @@
 package ApplicationFiles;
 
-public class  ProfileInfo {
+public class ProfileInfo {
     private String firstName;
     private String lastName;
     private int age;

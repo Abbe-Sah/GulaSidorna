@@ -30,6 +30,7 @@ public class testingClass{
 
             profile.addProfile(profileInfo);
             profile.printProfileList();
+            
 
         }
 
