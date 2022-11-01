@@ -1,7 +1,6 @@
 package ApplicationFiles;
 
-public class Menu {
-  import java.util.Scanner;
+import java.util.Scanner;
 
 public class Menu {
         Scanner scanner = new Scanner(System.in);
