@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Profile {
 
+
     private ArrayList<ProfileInfo> profileList = new ArrayList<>();
 
 
@@ -16,5 +17,10 @@ public class Profile {
             System.out.println(profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
         }
     }
+
+    public ArrayList<ProfileInfo> getProfileList() {
+        return profileList;
+    }
+
 
 }
