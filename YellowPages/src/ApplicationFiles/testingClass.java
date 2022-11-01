@@ -7,7 +7,7 @@ public class testingClass{
         Scanner scanner = new Scanner(System.in);
         Profile profile = new Profile();
 
-        Authentication.login("teamtfsadfwo");
+        Authentication.login("teamtwo");
         System.out.println(Authentication.isAdmin);
 
         while (true){
