@@ -8,8 +8,8 @@ public class testingClass{
         Profile profile = new Profile();
 
         // Add dummy profiles to list
-        //profile.addDummyProfilesToList();
-        //profile.printProfileList();
+//        profile.addDummyProfilesToList();
+//        profile.printProfileList();
 
 
         //For login and check if admin
@@ -47,9 +47,9 @@ public class testingClass{
 
 
             //Update Profile function example
-//            System.out.println("What user index do you want to update");
-//            int updateNumber = scanner.nextInt();
-//            profile.updateProfile(updateNumber);
+            System.out.println("What user index do you want to update");
+            int updateNumber = scanner.nextInt();
+            profile.updateProfile(updateNumber);
 
 
 

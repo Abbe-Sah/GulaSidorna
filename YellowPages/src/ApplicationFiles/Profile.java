@@ -69,7 +69,7 @@ public class Profile {
                 1, 87456, "Stockholm");
         profileList.add(dummyTwo);
 
-        ProfileInfo dummyThree = new ProfileInfo("Olof", "Olfosson", 43,
+        ProfileInfo dummyThree = new ProfileInfo("Malin", "Olfosson", 43,
                 "078544544", "BrommaVägen", 4,
                 6, 72455, "Stockholm");
         profileList.add(dummyThree);
@@ -88,6 +88,16 @@ public class Profile {
                 "070645544", "Villvägen", 4,
                 3, 80214, "Umeå");
         profileList.add(dummySix);
+
+        ProfileInfo dummySeven = new ProfileInfo("Lisa", "Haraldsson", 25,
+                "0785545454", "Borrsvängen", 8,
+                3, 80214, "Umeå");
+        profileList.add(dummySeven);
+
+        ProfileInfo dummyEight = new ProfileInfo("Angelina", "Dunsjö", 19,
+                "0784545455", "Rimogvägen", 2,
+                9, 95445, "Sundsvall");
+        profileList.add(dummyEight);
 
     }
 
