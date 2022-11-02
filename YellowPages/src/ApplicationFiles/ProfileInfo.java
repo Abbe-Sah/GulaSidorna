@@ -11,7 +11,7 @@ public class ProfileInfo {
     private int streetNumber;
     private int apartmentNumber;
 
-    private int phoneNumber;
+    private String phoneNumber;
 
     public String getFirstName() {
         return firstName;
@@ -85,16 +85,16 @@ public class ProfileInfo {
         this.apartmentNumber = apartmentNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     public ProfileInfo (String firstName, String lastName, int age,
-                        int phoneNumber, String streetName, int streetNumber,
+                        String phoneNumber, String streetName, int streetNumber,
                         int apartmentNumber, int zipCode, String city) {
 
         this.firstName = firstName;

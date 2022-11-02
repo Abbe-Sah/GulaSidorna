@@ -1,9 +1,11 @@
 package ApplicationFiles;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Profile {
 
+    Scanner scanner = new Scanner(System.in);
 
     private ArrayList<ProfileInfo> profileList = new ArrayList<>();
 
@@ -14,7 +16,7 @@ public class Profile {
 
     public void printProfileList() {
         for(ProfileInfo profiles : profileList){
-            System.out.println(profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+            System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
         }
     }
 
@@ -27,9 +29,66 @@ public class Profile {
         System.out.println("Removed profile");
     }
 
-    public void updateProfile(int inputNumber, ProfileInfo profileInfo){
-        profileList.set(inputNumber, profileInfo);
-        System.out.println("Updated profile");
+    public void updateProfile(int profileIndex){
+        while (true) {
+            System.out.println("Update Name");
+            String name = scanner.next();
+            System.out.println("Update Lastname");
+            String lastName = scanner.next();
+            System.out.println("Update Age");
+            int age = scanner.nextInt();
+            System.out.println("Update PhoneNumber");
+            String phoneNumber = scanner.next();
+            System.out.println("Update Street name");
+            String streetName = scanner.next();
+            System.out.println("Update Street number");
+            int streetNumber = scanner.nextInt();
+            System.out.println("Update Apartment number");
+            int apartmentNumber = scanner.nextInt();
+            System.out.println("Update  ZipCode");
+            int zipCode = scanner.nextInt();
+            System.out.println("Update  City");
+            String city = scanner.next();
+            ProfileInfo profileInfo = new ProfileInfo(name, lastName, age, phoneNumber, streetName, streetNumber, apartmentNumber, zipCode, city);
+
+            profileList.set(profileIndex, profileInfo);
+
+            System.out.println("Updated profile at index " + profileIndex);
+            break;
+        }
+    }
+
+    public void addDummyProfilesToList(){
+        ProfileInfo dummyOne = new ProfileInfo("Kalle", "Svensson", 34,
+                "0705545554", "Författarvägen", 45,
+                4, 78465, "Östersund");
+        profileList.add(dummyOne);
+
+        ProfileInfo dummyTwo = new ProfileInfo("Max", "Bengtsson", 25,
+                "079966565", "Sommarvägen", 7,
+                1, 87456, "Stockholm");
+        profileList.add(dummyTwo);
+
+        ProfileInfo dummyThree = new ProfileInfo("Olof", "Olfosson", 43,
+                "078544544", "BrommaVägen", 4,
+                6, 72455, "Stockholm");
+        profileList.add(dummyThree);
+
+        ProfileInfo dummyFour = new ProfileInfo("Abbe", "Saha", 40,
+                "0702544545", "Alegatan", 5,
+                35, 87422, "Göteborg");
+        profileList.add(dummyFour);
+
+        ProfileInfo dummyFive = new ProfileInfo("Ahmed", "AlKafri", 41,
+                "070554554", "Södra Karlvägen", 45,
+                2, 70245, "Boden");
+        profileList.add(dummyFive);
+
+        ProfileInfo dummySix = new ProfileInfo("Jakob", "Rolandsson", 37,
+                "070645544", "Villvägen", 4,
+                3, 80214, "Umeå");
+        profileList.add(dummySix);
+
     }
 
 
