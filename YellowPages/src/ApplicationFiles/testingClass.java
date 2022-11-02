@@ -8,8 +8,8 @@ public class testingClass{
         Profile profile = new Profile();
 
         // Add dummy profiles to list
-//        profile.addDummyProfilesToList();
-//        profile.printProfileList();
+       profile.addDummyProfilesToList();
+       profile.printProfileList();
 
 
         //For login and check if admin
