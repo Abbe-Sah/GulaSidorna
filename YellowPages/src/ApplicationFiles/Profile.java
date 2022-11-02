@@ -22,5 +22,15 @@ public class Profile {
         return profileList;
     }
 
+    public void removeProfile(int inputNumber){
+        profileList.remove(inputNumber);
+        System.out.println("Removed profile");
+    }
+
+    public void updateProfile(int inputNumber, ProfileInfo profileInfo){
+        profileList.set(inputNumber, profileInfo);
+        System.out.println("Updated profile");
+    }
+
 
 }

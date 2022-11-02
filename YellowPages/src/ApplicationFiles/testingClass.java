@@ -7,9 +7,13 @@ public class testingClass{
         Scanner scanner = new Scanner(System.in);
         Profile profile = new Profile();
 
-        Authentication.login("teamtwo");
-        System.out.println(Authentication.isAdmin);
+        //For login and check if admin
+//        Authentication.login("teamtwo");
+//        System.out.println(Authentication.isAdmin);
 
+
+
+        // Test how to get data and write to the list.
         while (true){
             System.out.println("Name");
             String name = scanner.next();
