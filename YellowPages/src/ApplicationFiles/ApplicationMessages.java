@@ -1,4 +1,5 @@
 package ApplicationFiles;
 
-public class ApplicationMessages {
+public interface ApplicationMessages {
+    public void print();
 }
