@@ -1,3 +1,4 @@
+package ApplicationFiles;
 public class MenuMessageOptions implements ApplicationMessages {
 
     @Override
