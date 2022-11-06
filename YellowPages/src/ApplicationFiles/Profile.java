@@ -58,6 +58,7 @@ public class Profile {
         }
     }
 
+    // This is for just for populate the list with some people.
     public void addDummyProfilesToList(){
         ProfileInfo dummyOne = new ProfileInfo("Kalle", "Svensson", 34,
                 "0705545554", "Författarvägen", 45,

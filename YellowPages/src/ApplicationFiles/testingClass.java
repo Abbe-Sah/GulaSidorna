@@ -18,7 +18,7 @@ public class testingClass{
 
 
 
-        // Test how to get data and write to the list.
+        // Test how to add data to the list.
 //        while (true){
 //            System.out.println("Name");
 //            String name = scanner.next();
