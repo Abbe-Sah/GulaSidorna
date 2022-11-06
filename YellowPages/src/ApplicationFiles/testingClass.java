@@ -7,6 +7,7 @@ public class testingClass{
         Scanner scanner = new Scanner(System.in);
         Profile profile = new Profile();
 
+
         // Add dummy profiles to list
        profile.addDummyProfilesToList();
        profile.printProfileList();
