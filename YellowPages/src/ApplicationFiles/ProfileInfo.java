@@ -93,10 +93,9 @@ public class ProfileInfo {
         this.phoneNumber = phoneNumber;
     }
 
-    public ProfileInfo (String firstName, String lastName, int age,
-                        String phoneNumber, String streetName, int streetNumber,
-                        int apartmentNumber, int zipCode, String city) {
-
+    public ProfileInfo(String firstName, String lastName, int age,
+                       String phoneNumber, String streetName, int streetNumber,
+                       int apartmentNumber, int zipCode, String city) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -106,7 +105,6 @@ public class ProfileInfo {
         this.streetNumber = streetNumber;
         this.apartmentNumber = apartmentNumber;
         this.phoneNumber = phoneNumber;
-
         this.address = ", Address: " + streetName + " " + streetNumber + ", Apartment number: " + apartmentNumber + ", ZipCode: " + zipCode + ", City: " + city;
 
     }

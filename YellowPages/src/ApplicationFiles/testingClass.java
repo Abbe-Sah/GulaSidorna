@@ -48,10 +48,9 @@ public class testingClass{
 
 
             //Update Profile function example
-            System.out.println("What user index do you want to update");
+            System.out.println("Type the number of the user you want to update");
             int updateNumber = scanner.nextInt();
             profile.updateProfile(updateNumber);
-
 
 
             //Remove Profile function
