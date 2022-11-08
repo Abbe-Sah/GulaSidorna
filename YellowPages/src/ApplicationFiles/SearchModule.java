@@ -21,16 +21,16 @@ public class SearchModule {
                 String searchInput = scanner.nextLine();
 
                 if (searchInput.equals("1")){
-                    System.out.println(Profile.profileList.get(0).getFirstName());
+                    firstNameSearch(Profile.profileList);
 
                 } else if (searchInput.equals("2")) {
-                    //lastNameSearch (this.profileList);
+                    lastNameSearch (Profile.profileList);
 
                 } else if (searchInput.equals("3")) {
-                    //addressSearch (this.profileList);
+                    addressSearch (Profile.profileList);
 
                 }else if (searchInput.equals("4")) {
-                    //freeSearch (this.profileList);
+                    freeSearch (Profile.profileList);
 
                 }else if (searchInput.equals("5")) {
                     quit = true;
@@ -47,16 +47,22 @@ public class SearchModule {
         String fName = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
-        for(ProfileInfo profiles : profileList){
-            if(profiles.getFirstName().equals(fName)) {
-                System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
-                profileOperation(profileList.indexOf(profiles), profileList);
-            }else {
-                System.out.println("Profile doesn't exist");
-                return null;
-            }
+
+        for(int i=0; i<= Profile.profileList.size(); i++){
+           if(Profile.profileList.get(i).getFirstName().equals(fName)) {
+
+               System.out.println("Profile Number: " + i);
+               System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
+               System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
+               System.out.println("Age: " + Profile.profileList.get(i).getAge());
+               System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
+               System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+
+               profileOperation(i, Profile.profileList);
+           }
 
         }
+
         return null;
     }
 
@@ -66,14 +72,18 @@ public class SearchModule {
         String lName = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
-        for(ProfileInfo profiles : profileList){
-            if(profiles.getLastName().equals(lName)) {
-                System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
-                profileOperation(profileList.indexOf(profiles), profileList);
-            }else {
-                System.out.println("Profile doesn't exist");
+        for(int i=0; i<= Profile.profileList.size(); i++){
+            if(Profile.profileList.get(i).getLastName().equals(lName)) {
+
+                System.out.println("Profile Number: " + i);
+                System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
+                System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
+                System.out.println("Age: " + Profile.profileList.get(i).getAge());
+                System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
+                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+
+                profileOperation(i, Profile.profileList);
             }
-            return null;
 
         }
         return null;
