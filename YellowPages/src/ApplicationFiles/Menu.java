@@ -6,7 +6,9 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         PrintedSpacing spacing = new PrintedSpacing();
         MenuMessageOptions messageOptions = new MenuMessageOptions();
-        Profile profile = new Profile();
+        LoginPrint loginPrint = new LoginPrint();
+        MenuProfileInput menuProfileInput = new MenuProfileInput();
+        SearchModule searchModule = new SearchModule();
         
         boolean quit = false;
         
@@ -19,20 +21,16 @@ public class Menu {
             switch (input) {
                 case "1" -> {
                     System.out.println("Searching...");
-                    //Code
+                    searchModule.searchMenu();
                     spacing.print();
                 }
                 case "2" -> {
-                    profile.addDummyProfilesToList();
-                    // Code: addProfile, removeProfile, updateProfile
+                    menuProfileInput.newProfilePrint();
                     System.out.println("Adding...");
-                    //profile.printProfileList();
                     spacing.print();
                 }
                 case "3" -> {
-                    System.out.print("Password: "); String inputPassword = scanner.nextLine();
-                    System.out.println("Authenticating...");
-                    Authentication.login(inputPassword);
+                    loginPrint.print();
                     spacing.print();
                 }
                 case "4" -> {
