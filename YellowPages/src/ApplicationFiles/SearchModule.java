@@ -5,8 +5,13 @@ import java.util.Scanner;
 
 public class SearchModule {
 
+    Profile profile = new Profile();
+
+
     public void searchMenu(){      // This method list all the options for the search
         Scanner scanner = new Scanner(System.in);
+
+
 
         boolean quit = false;
             do{
@@ -41,6 +46,7 @@ public class SearchModule {
             } while (!quit);
     }
 
+
     public Profile firstNameSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name you would like to search for:");
@@ -48,21 +54,30 @@ public class SearchModule {
         System.out.println("---------------------------------------------");
 
 
-        for(int i=0; i<= Profile.profileList.size(); i++){
-           if(Profile.profileList.get(i).getFirstName().equals(fName)) {
 
-               System.out.println("Profile Number: " + i);
-               System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
-               System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
-               System.out.println("Age: " + Profile.profileList.get(i).getAge());
-               System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
-               System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+        boolean foundProfile = false;
+        for(int i=0; i< Profile.profileList.size(); i++) {
+            if (Profile.profileList.get(i).getFirstName().startsWith(fName)) {
 
-               profileOperation(i, Profile.profileList);
-           }
+                System.out.println("Profile Number: " + i);
+                System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
+                System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
+                System.out.println("Age: " + Profile.profileList.get(i).getAge());
+                System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
+                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println("---------------------------------------------");
 
+                foundProfile = true;
+            }
         }
-
+        if (!foundProfile) {
+            System.out.println("Profile doesn't exist");
+            System.out.println("---------------------------------------------");
+        }else{
+            if (Authentication.isAdmin) {
+                profileOperation();
+            }
+        }
         return null;
     }
 
@@ -72,8 +87,9 @@ public class SearchModule {
         String lName = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
-        for(int i=0; i<= Profile.profileList.size(); i++){
-            if(Profile.profileList.get(i).getLastName().equals(lName)) {
+        boolean foundProfile = false;
+        for(int i=0; i< Profile.profileList.size(); i++) {
+            if (Profile.profileList.get(i).getLastName().startsWith(lName)) {
 
                 System.out.println("Profile Number: " + i);
                 System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
@@ -81,10 +97,19 @@ public class SearchModule {
                 System.out.println("Age: " + Profile.profileList.get(i).getAge());
                 System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
                 System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println("---------------------------------------------");
 
-                profileOperation(i, Profile.profileList);
+                foundProfile = true;
             }
-
+        }
+        if (!foundProfile) {
+            System.out.println("Profile doesn't exist");
+            System.out.println("---------------------------------------------");
+        }else{
+            if (Authentication.isAdmin) {
+                System.out.println(Authentication.isAdmin);
+                profileOperation();
+            }
         }
         return null;
     }
@@ -95,47 +120,93 @@ public class SearchModule {
         String address = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
-        for (ProfileInfo profiles : profileList) {
-            if (profiles.getCity().equals(address) || profiles.getStreetName().equals(address)) {
-                System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
-                profileOperation(profileList.indexOf(profiles), profileList);
-            } else {
-                System.out.println("Profile doesn't exist");
-                return null;
-            }
+        boolean foundProfile = false;
+        for(int i=0; i< Profile.profileList.size(); i++) {
 
+            String strZipCode = Integer.toString(Profile.profileList.get(i).getZipCode());
+            String strStreetNumber = Integer.toString(Profile.profileList.get(i).getStreetNumber());
+
+
+            if (Profile.profileList.get(i).getCity().startsWith(address) || Profile.profileList.get(i).getPhoneNumber().startsWith(address)
+                    || strZipCode == address || strStreetNumber == address
+            ) {
+
+                System.out.println("Profile Number: " + i);
+                System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
+                System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
+                System.out.println("Age: " + Profile.profileList.get(i).getAge());
+                System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
+                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println("---------------------------------------------");
+
+                foundProfile = true;
+            }
+        }
+        if (!foundProfile) {
+            System.out.println("Profile doesn't exist");
+            System.out.println("---------------------------------------------");
+        }else{
+            if (Authentication.isAdmin) {
+                System.out.println(Authentication.isAdmin);
+                profileOperation();
+            }
         }
         return null;
     }
 
     public Profile freeSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the ADDRESS you would like to search for:");
+        System.out.println("Enter any thing to search for:");
         String freeSearch = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
-        for (ProfileInfo profiles : profileList) {
-            if (profiles.getFirstName().equals(freeSearch) || profiles.getLastName().equals(freeSearch) || profiles.getCity().equals(freeSearch) || profiles.getStreetName().equals(freeSearch)) {
-                System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
-                profileOperation(profileList.indexOf(profiles), profileList);
-            } else {
-                System.out.println("Profile doesn't exist");
-                return null;
-            }
+        boolean foundProfile = false;
+        for(int i=0; i< Profile.profileList.size(); i++) {
 
+            String strZipCode = Integer.toString(Profile.profileList.get(i).getZipCode());
+            String strStreetNumber = Integer.toString(Profile.profileList.get(i).getStreetNumber());
+
+
+            if (Profile.profileList.get(i).getFirstName().startsWith(freeSearch) || Profile.profileList.get(i).getLastName().startsWith(freeSearch)
+                    || Profile.profileList.get(i).getCity().startsWith(freeSearch) || Profile.profileList.get(i).getPhoneNumber().startsWith(freeSearch)
+                    || strZipCode == freeSearch || strStreetNumber == freeSearch
+            ) {
+
+                System.out.println("Profile Number: " + i);
+                System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
+                System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
+                System.out.println("Age: " + Profile.profileList.get(i).getAge());
+                System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
+                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println("---------------------------------------------");
+
+                foundProfile = true;
+            }
+        }
+        if (!foundProfile) {
+            System.out.println("Profile doesn't exist");
+            System.out.println("---------------------------------------------");
+        }else{
+            if (Authentication.isAdmin) {
+                System.out.println(Authentication.isAdmin);
+                profileOperation();
+            }
         }
         return null;
     }
 
-    public void profileOperation (int profileIndex, ArrayList<ProfileInfo> profileList) {
+    public void profileOperation () {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Choose 1 for update, 2 for delete or any key to exit");
+        System.out.println("Choose 1 for update, 2 for delete or any key to exit:");
         String choiceInput = scanner.nextLine();
+        System.out.println("Choose Profile index number:");
+        Integer ChoiceIndex = scanner.nextInt();
+
         if (choiceInput.equals("1")) {
-            //profile.updateProfile(profileList.indexOf(profileIndex));
+           profile.updateProfile(ChoiceIndex);
         } else if (choiceInput.equals("2")) {
-           // profile.removeProfile(profileList.indexOf(profileIndex));
+           profile.removeProfile(ChoiceIndex);
         }
     }
 
