@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Profile {
     Scanner scanner = new Scanner(System.in);
 
-    private final ArrayList<ProfileInfo> profileList = new ArrayList<>();
+    public static ArrayList<ProfileInfo> profileList = new ArrayList<>();
 
 
     public void addProfile(ProfileInfo profileInfo) {

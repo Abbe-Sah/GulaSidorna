@@ -5,11 +5,9 @@ import java.util.Scanner;
 
 public class SearchModule {
 
-    Profile profile = new Profile();
-    private  ArrayList<ProfileInfo> profileList = new ArrayList<>();
-
     public void searchMenu(){      // This method list all the options for the search
         Scanner scanner = new Scanner(System.in);
+
         boolean quit = false;
             do{
                 System.out.println("Please choose one of the following options");
@@ -23,16 +21,16 @@ public class SearchModule {
                 String searchInput = scanner.nextLine();
 
                 if (searchInput.equals("1")){
-                    firstNameSearch (this.profileList);
+                    System.out.println(Profile.profileList.get(0).getFirstName());
 
                 } else if (searchInput.equals("2")) {
-                    lastNameSearch (this.profileList);
+                    //lastNameSearch (this.profileList);
 
                 } else if (searchInput.equals("3")) {
-                    addressSearch (this.profileList);
+                    //addressSearch (this.profileList);
 
                 }else if (searchInput.equals("4")) {
-                    freeSearch (this.profileList);
+                    //freeSearch (this.profileList);
 
                 }else if (searchInput.equals("5")) {
                     quit = true;
@@ -125,9 +123,9 @@ public class SearchModule {
         System.out.println("Choose 1 for update, 2 for delete or any key to exit");
         String choiceInput = scanner.nextLine();
         if (choiceInput.equals("1")) {
-            profile.updateProfile(profileList.indexOf(profileIndex));
+            //profile.updateProfile(profileList.indexOf(profileIndex));
         } else if (choiceInput.equals("2")) {
-            profile.removeProfile(profileList.indexOf(profileIndex));
+           // profile.removeProfile(profileList.indexOf(profileIndex));
         }
     }
 

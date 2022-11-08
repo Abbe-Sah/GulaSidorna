@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
         Scanner scanner = new Scanner(System.in);
+
         PrintedSpacing spacing = new PrintedSpacing();
         MenuMessageOptions messageOptions = new MenuMessageOptions();
         LoginPrint loginPrint = new LoginPrint();

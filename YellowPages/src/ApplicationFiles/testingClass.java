@@ -5,12 +5,8 @@ import java.util.Scanner;
 public class testingClass{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Profile profile = new Profile();
 
 
-        // Add dummy profiles to list
-       profile.addDummyProfilesToList();
-       profile.printProfileList();
 
 
         //For login and check if admin
@@ -48,9 +44,9 @@ public class testingClass{
 
 
             //Update Profile function example
-            System.out.println("Type the number of the user you want to update");
-            int updateNumber = scanner.nextInt();
-            profile.updateProfile(updateNumber);
+//            System.out.println("Type the number of the user you want to update");
+//            int updateNumber = scanner.nextInt();
+//            profile.updateProfile(updateNumber);
 
 
             //Remove Profile function
