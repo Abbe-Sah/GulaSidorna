@@ -66,11 +66,12 @@ public class Profile {
 
     }
 
-    public static void addedToList(){
+    public static void addedToList() {
         System.out.println("##############################################");
         System.out.println("Added " + profileList.get(profileList.size() - 1).getFirstName() + " to the list.");
         System.out.println("##############################################");
     }
+
     // This is for just for populate the list with some people.
     public void addDummyProfilesToList() {
         ProfileInfo dummyOne = new ProfileInfo("Kalle", "Svensson", 34,
