@@ -1,3 +1,4 @@
+package ApplicationFiles;
 import java.util.Scanner;
 
 public class LoginPrint implements ApplicationMessages{
