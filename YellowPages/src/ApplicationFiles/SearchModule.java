@@ -51,6 +51,8 @@ public class SearchModule {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name you would like to search for:");
         String fName = scanner.nextLine();
+        fName =  fName.toLowerCase();
+        System.out.println(fName);
         System.out.println("---------------------------------------------");
 
 
@@ -64,7 +66,7 @@ public class SearchModule {
                 System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
                 System.out.println("Age: " + Profile.profileList.get(i).getAge());
                 System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
-                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println(Profile.profileList.get(i).getAddress());
                 System.out.println("---------------------------------------------");
 
                 foundProfile = true;
@@ -85,6 +87,7 @@ public class SearchModule {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the LAST NAME you would like to search for:");
         String lName = scanner.nextLine();
+        lName =  lName.toLowerCase();
         System.out.println("---------------------------------------------");
 
         boolean foundProfile = false;
@@ -96,7 +99,7 @@ public class SearchModule {
                 System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
                 System.out.println("Age: " + Profile.profileList.get(i).getAge());
                 System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
-                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println(Profile.profileList.get(i).getAddress());
                 System.out.println("---------------------------------------------");
 
                 foundProfile = true;
@@ -118,6 +121,7 @@ public class SearchModule {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter STREET NAME you would like to search for:");
         String address = scanner.nextLine();
+        address =  address.toLowerCase();
         System.out.println("---------------------------------------------");
 
         boolean foundProfile = false;
@@ -130,7 +134,7 @@ public class SearchModule {
                 System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
                 System.out.println("Age: " + Profile.profileList.get(i).getAge());
                 System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
-                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println(Profile.profileList.get(i).getAddress());
                 System.out.println("---------------------------------------------");
 
                 foundProfile = true;
@@ -152,13 +156,15 @@ public class SearchModule {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter any thing to search for:");
         String freeSearch = scanner.nextLine();
+        freeSearch =  freeSearch.toLowerCase();
         System.out.println("---------------------------------------------");
 
         boolean foundProfile = false;
         for(int i=0; i< Profile.profileList.size(); i++) {
 
             if (Profile.profileList.get(i).getFirstName().toLowerCase().startsWith(freeSearch) || Profile.profileList.get(i).getLastName().toLowerCase().startsWith(freeSearch)
-                    || Profile.profileList.get(i).getAddress().toLowerCase().contains(freeSearch)
+                    || Profile.profileList.get(i).getAddress().toLowerCase().contains(freeSearch) ||
+                    Profile.profileList.get(i).getPhoneNumber().contains(freeSearch)
             ) {
 
                 System.out.println("Profile Number: " + i);
@@ -166,7 +172,7 @@ public class SearchModule {
                 System.out.println("Last Name: " + Profile.profileList.get(i).getLastName());
                 System.out.println("Age: " + Profile.profileList.get(i).getAge());
                 System.out.println("Phone: " + Profile.profileList.get(i).getPhoneNumber());
-                System.out.println("Address: " + Profile.profileList.get(i).getAddress());
+                System.out.println(Profile.profileList.get(i).getAddress());
                 System.out.println("---------------------------------------------");
 
                 foundProfile = true;
@@ -187,7 +193,7 @@ public class SearchModule {
     public void profileOperation () {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Choose 1 for update, 2 for delete or any key to exit:");
+        System.out.println("Choose 1 for update:");
         System.out.println("Or 2 for delete");
         System.out.println("Or any key to exit:");
         System.out.println("---------------------------------------------");
