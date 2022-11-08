@@ -15,7 +15,9 @@ public class Profile {
 
     public void printProfileList() {
         for (ProfileInfo profiles : profileList) {
-            System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + profiles.getAddress());
+            System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " "
+                    + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: "
+                    + profiles.getPhoneNumber() + profiles.getAddress());
         }
     }
 
@@ -29,27 +31,37 @@ public class Profile {
     }
 
     public void updateProfile(int profileIndex) {
-        System.out.println("Update Name");
+        System.out.println("Update Name on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getFirstName() + " to:");
         String name = scanner.next();
-        System.out.println("Update Lastname");
+        System.out.println("Update Lastname on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getLastName() + " to:");
         String lastName = scanner.next();
-        System.out.println("Update Age");
+        System.out.println("Update Age on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getAge() + " to:");
         int age = scanner.nextInt();
-        System.out.println("Update PhoneNumber");
+        System.out.println("Update PhoneNumber on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getPhoneNumber() + " to:");
         String phoneNumber = scanner.next();
-        System.out.println("Update Street name");
+        System.out.println("Update Street name on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getStreetName() + " to:");
         String streetName = scanner.next();
-        System.out.println("Update Street number");
+        System.out.println("Update Street number on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getStreetNumber() + " to:");
         int streetNumber = scanner.nextInt();
-        System.out.println("Update Apartment number");
+        System.out.println("Update Apartment number on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getApartmentNumber() + " to:");
         int apartmentNumber = scanner.nextInt();
-        System.out.println("Update  ZipCode");
+        System.out.println("Update  ZipCode on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getZipCode() + " to:");
         int zipCode = scanner.nextInt();
-        System.out.println("Update  City");
+        System.out.println("Update  City on userID:" + profileIndex + " from "
+                + profileList.get(profileIndex).getCity() + " to:");
         String city = scanner.next();
-        ProfileInfo profileInfo = new ProfileInfo(name, lastName, age, phoneNumber, streetName, streetNumber, apartmentNumber, zipCode, city);
+        ProfileInfo profileInfo = new ProfileInfo(name, lastName, age, phoneNumber,
+                streetName, streetNumber, apartmentNumber, zipCode, city);
         profileList.set(profileIndex, profileInfo);
-        System.out.println("Updated profile at index " + profileIndex);
+        System.out.println("Updated userID " + profileIndex);
 
 
     }
