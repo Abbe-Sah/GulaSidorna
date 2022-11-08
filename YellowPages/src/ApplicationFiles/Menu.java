@@ -3,22 +3,20 @@ package ApplicationFiles;
 import java.util.Scanner;
 
 public class Menu {
-        Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-        PrintedSpacing spacing = new PrintedSpacing();
-        MenuMessageOptions messageOptions = new MenuMessageOptions();
-        LoginPrint loginPrint = new LoginPrint();
-        MenuProfileInput menuProfileInput = new MenuProfileInput();
-        SearchModule searchModule = new SearchModule();
-        
-        boolean quit = false;
-        
-        public void runMenu(){
+    PrintedSpacing spacing = new PrintedSpacing();
+    MenuMessageOptions messageOptions = new MenuMessageOptions();
+    LoginPrint loginPrint = new LoginPrint();
+    MenuProfileInput menuProfileInput = new MenuProfileInput();
+    SearchModule searchModule = new SearchModule();
+
+    boolean quit = false;
+
+    public void runMenu() {
         do {
-
             messageOptions.print();
             String input = scanner.nextLine();
-
             switch (input) {
                 case "1" -> {
                     //System.out.println("Searching...");

@@ -13,21 +13,12 @@ public class Profile {
         profileList.add(profileInfo);
     }
 
-    public void printProfileList() {
-        for (ProfileInfo profiles : profileList) {
-            System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " "
-                    + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: "
-                    + profiles.getPhoneNumber() + profiles.getAddress());
-        }
-    }
-
-    public ArrayList<ProfileInfo> getProfileList() {
-        return profileList;
-    }
 
     public void removeProfile(int inputNumber) {
         profileList.remove(inputNumber);
-        System.out.println("Removed profile");
+        System.out.println("################");
+        System.out.println("REMOVED PROFILE");
+        System.out.println("################");
     }
 
     public void updateProfile(int profileIndex) {
@@ -61,7 +52,9 @@ public class Profile {
         ProfileInfo profileInfo = new ProfileInfo(name, lastName, age, phoneNumber,
                 streetName, streetNumber, apartmentNumber, zipCode, city);
         profileList.set(profileIndex, profileInfo);
-        System.out.println("Updated userID " + profileIndex);
+        System.out.println("################");
+        System.out.println("UPDATED USER " + profileIndex);
+        System.out.println("################");
 
 
     }
