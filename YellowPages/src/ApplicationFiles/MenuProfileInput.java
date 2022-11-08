@@ -1,4 +1,4 @@
-package
+package ApplicationFiles;
 import java.util.Scanner;
 
 public class MenuProfileInput {
