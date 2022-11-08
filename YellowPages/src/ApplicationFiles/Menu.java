@@ -21,7 +21,7 @@ public class Menu {
 
             switch (input) {
                 case "1" -> {
-                    System.out.println("Searching...");
+                    //System.out.println("Searching...");
                     searchModule.searchMenu();
                     spacing.print();
                 }
