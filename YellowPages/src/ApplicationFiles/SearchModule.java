@@ -52,6 +52,7 @@ public class SearchModule {
         for(ProfileInfo profiles : profileList){
             if(profiles.getFirstName().equals(fName)) {
                 System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+                profileOperation(profileList.indexOf(profiles), profileList);
             }else {
                 System.out.println("Profile doesn't exist");
                 return null;
@@ -70,6 +71,7 @@ public class SearchModule {
         for(ProfileInfo profiles : profileList){
             if(profiles.getLastName().equals(lName)) {
                 System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+                profileOperation(profileList.indexOf(profiles), profileList);
             }else {
                 System.out.println("Profile doesn't exist");
             }
@@ -88,6 +90,7 @@ public class SearchModule {
         for (ProfileInfo profiles : profileList) {
             if (profiles.getCity().equals(address) || profiles.getStreetName().equals(address)) {
                 System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+                profileOperation(profileList.indexOf(profiles), profileList);
             } else {
                 System.out.println("Profile doesn't exist");
                 return null;
@@ -106,6 +109,7 @@ public class SearchModule {
         for (ProfileInfo profiles : profileList) {
             if (profiles.getFirstName().equals(freeSearch) || profiles.getLastName().equals(freeSearch) || profiles.getCity().equals(freeSearch) || profiles.getStreetName().equals(freeSearch)) {
                 System.out.println(profileList.indexOf(profiles) + ": " + profiles.getFirstName() + " " + profiles.getLastName() + " Age: " + profiles.getAge() + ", Phone: " + profiles.getPhoneNumber() + " " + profiles.getAddress());
+                profileOperation(profileList.indexOf(profiles), profileList);
             } else {
                 System.out.println("Profile doesn't exist");
                 return null;
@@ -114,4 +118,17 @@ public class SearchModule {
         }
         return null;
     }
+
+    public void profileOperation (int profileIndex, ArrayList<ProfileInfo> profileList) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose 1 for update, 2 for delete or any key to exit");
+        String choiceInput = scanner.nextLine();
+        if (choiceInput.equals("1")) {
+            profile.updateProfile(profileList.indexOf(profileIndex));
+        } else if (choiceInput.equals("2")) {
+            profile.removeProfile(profileList.indexOf(profileIndex));
+        }
+    }
+
 }
