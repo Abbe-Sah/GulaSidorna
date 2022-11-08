@@ -57,7 +57,7 @@ public class SearchModule {
 
         boolean foundProfile = false;
         for(int i=0; i< Profile.profileList.size(); i++) {
-            if (Profile.profileList.get(i).getFirstName().startsWith(fName)) {
+            if (Profile.profileList.get(i).getFirstName().toLowerCase().startsWith(fName)) {
 
                 System.out.println("Profile Number: " + i);
                 System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
@@ -89,7 +89,7 @@ public class SearchModule {
 
         boolean foundProfile = false;
         for(int i=0; i< Profile.profileList.size(); i++) {
-            if (Profile.profileList.get(i).getLastName().startsWith(lName)) {
+            if (Profile.profileList.get(i).getLastName().toLowerCase().startsWith(lName)) {
 
                 System.out.println("Profile Number: " + i);
                 System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
@@ -116,20 +116,14 @@ public class SearchModule {
 
     public Profile addressSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the ADDRESS you would like to search for:");
+        System.out.println("Enter STREET NAME you would like to search for:");
         String address = scanner.nextLine();
         System.out.println("---------------------------------------------");
 
         boolean foundProfile = false;
         for(int i=0; i< Profile.profileList.size(); i++) {
 
-            String strZipCode = Integer.toString(Profile.profileList.get(i).getZipCode());
-            String strStreetNumber = Integer.toString(Profile.profileList.get(i).getStreetNumber());
-
-
-            if (Profile.profileList.get(i).getCity().startsWith(address) || Profile.profileList.get(i).getPhoneNumber().startsWith(address)
-                    || strZipCode == address || strStreetNumber == address
-            ) {
+            if (Profile.profileList.get(i).getStreetName().toLowerCase().startsWith(address)) {
 
                 System.out.println("Profile Number: " + i);
                 System.out.println("First Name: " + Profile.profileList.get(i).getFirstName());
@@ -163,13 +157,8 @@ public class SearchModule {
         boolean foundProfile = false;
         for(int i=0; i< Profile.profileList.size(); i++) {
 
-            String strZipCode = Integer.toString(Profile.profileList.get(i).getZipCode());
-            String strStreetNumber = Integer.toString(Profile.profileList.get(i).getStreetNumber());
-
-
-            if (Profile.profileList.get(i).getFirstName().startsWith(freeSearch) || Profile.profileList.get(i).getLastName().startsWith(freeSearch)
-                    || Profile.profileList.get(i).getCity().startsWith(freeSearch) || Profile.profileList.get(i).getPhoneNumber().startsWith(freeSearch)
-                    || strZipCode == freeSearch || strStreetNumber == freeSearch
+            if (Profile.profileList.get(i).getFirstName().toLowerCase().startsWith(freeSearch) || Profile.profileList.get(i).getLastName().toLowerCase().startsWith(freeSearch)
+                    || Profile.profileList.get(i).getAddress().toLowerCase().contains(freeSearch)
             ) {
 
                 System.out.println("Profile Number: " + i);
@@ -199,14 +188,24 @@ public class SearchModule {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Choose 1 for update, 2 for delete or any key to exit:");
+        System.out.println("Or 2 for delete");
+        System.out.println("Or any key to exit:");
+        System.out.println("---------------------------------------------");
         String choiceInput = scanner.nextLine();
-        System.out.println("Choose Profile index number:");
-        Integer ChoiceIndex = scanner.nextInt();
+
 
         if (choiceInput.equals("1")) {
+            System.out.println("Choose Profile index number:");
+            System.out.println("---------------------------------------------");
+            Integer ChoiceIndex = scanner.nextInt();
            profile.updateProfile(ChoiceIndex);
         } else if (choiceInput.equals("2")) {
+            System.out.println("Choose Profile index number:");
+            System.out.println("---------------------------------------------");
+            Integer ChoiceIndex = scanner.nextInt();
            profile.removeProfile(ChoiceIndex);
+        }else{
+            searchMenu();
         }
     }
 
