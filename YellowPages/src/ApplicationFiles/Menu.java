@@ -27,7 +27,7 @@ public class Menu {
                 }
                 case "2" -> {
                     menuProfileInput.newProfilePrint();
-                    System.out.println("Adding...");
+                    Profile.addedToList();
                     spacing.print();
                 }
                 case "3" -> {
