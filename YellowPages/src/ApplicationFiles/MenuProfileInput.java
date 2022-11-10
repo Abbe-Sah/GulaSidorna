@@ -9,6 +9,7 @@ public class MenuProfileInput {
     public void newProfilePrint() {
         int addMoreNumbers = 1;
         String phoneNumber = "";
+        StringBuilder str = new StringBuilder();
 
         System.out.println("Please type in your name:");
         String name = scanner.next();
@@ -21,7 +22,8 @@ public class MenuProfileInput {
             String subPhoneNumber = scanner.next();
             System.out.println("Do you want to add more phone number to this user?");
             System.out.println("1 = YES ---- 0 = NO");
-            phoneNumber  = phoneNumber.concat(subPhoneNumber + ", ");
+            str.append(subPhoneNumber + ", ");
+            phoneNumber = str.toString();
             addMoreNumbers = scanner.nextInt();
         }
         System.out.println("Type in your street name:");

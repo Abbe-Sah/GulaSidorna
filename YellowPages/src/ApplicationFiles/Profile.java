@@ -33,13 +33,14 @@ public class Profile {
         int age = scanner.nextInt();
         int addMoreNumbers = 1;
         String phoneNumber = " ";
+        StringBuilder str = new StringBuilder();
         while (addMoreNumbers == 1){
-            System.out.println("Update PhoneNumber on userID:" + profileIndex + " from "
-                    + profileList.get(profileIndex).getPhoneNumber() + " to:");
+            System.out.println("Type in your phone-number:");
             String subPhoneNumber = scanner.next();
             System.out.println("Do you want to add more phone number to this user?");
             System.out.println("1 = YES ---- 0 = NO");
-            phoneNumber  = phoneNumber.concat(subPhoneNumber + ", ");
+            str.append(subPhoneNumber + ", ");
+            phoneNumber = str.toString();
             addMoreNumbers = scanner.nextInt();
         }
         System.out.println("Update Street name on userID:" + profileIndex + " from "
