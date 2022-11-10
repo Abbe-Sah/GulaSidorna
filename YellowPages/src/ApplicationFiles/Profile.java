@@ -67,11 +67,11 @@ public class Profile {
 
     // This is for just for populate the list with some people.
     public void addDummyProfilesToList() {
-        ProfileInfo dummyOne = new ProfileInfo("Kalle", "Svensson", 34,
+        ProfileInfo dummyOne = new ProfileInfo("Max", "Svensson", 34,
                 "0705545554", "Författarvägen", 45,
                 4, 78465, "Östersund");
         profileList.add(dummyOne);
-        ProfileInfo dummyTwo = new ProfileInfo("Max", "Bengtsson", 25,
+        ProfileInfo dummyTwo = new ProfileInfo("Kalle", "Bengtsson", 25,
                 "0799665615", "Sommarvägen", 7,
                 1, 87456, "Stockholm");
         profileList.add(dummyTwo);
@@ -103,7 +103,7 @@ public class Profile {
                 "0752857657", "Bodsjögränd", 23,
                 1, 85644, "Uppsala");
         profileList.add(dummyNine);
-        ProfileInfo dummyTen = new ProfileInfo("Elias", "Pirmoradi", 19,
+        ProfileInfo dummyTen = new ProfileInfo("Kalle", "Pirmoradi", 19,
                 "0764587575", "Hisingsvägen", 93,
                 1, 90414, "Göteborg");
         profileList.add(dummyTen);

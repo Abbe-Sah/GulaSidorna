@@ -1,17 +1,16 @@
 package ApplicationFiles;
 
 public class ProfileInfo {
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String address;
-    private String city;
-    private int zipCode;
-    private String streetName;
-    private int streetNumber;
-    private int apartmentNumber;
-
-    private String phoneNumber;
+    private final String firstName;
+    private final String lastName;
+    private final int age;
+    private final String address;
+    private final String city;
+    private final int zipCode;
+    private final String streetName;
+    private final int streetNumber;
+    private final int apartmentNumber;
+    private final String phoneNumber;
 
     public String getFirstName() {
         return firstName;

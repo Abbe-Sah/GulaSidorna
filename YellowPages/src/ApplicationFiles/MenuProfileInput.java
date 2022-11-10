@@ -7,14 +7,23 @@ public class MenuProfileInput {
     Profile profile = new Profile();
 
     public void newProfilePrint() {
+        int addMoreNumbers = 1;
+        String phoneNumber = "";
+
         System.out.println("Please type in your name:");
         String name = scanner.next();
         System.out.println("Type in your last name:");
         String lastName = scanner.next();
         System.out.println("Type in your age:");
         int age = scanner.nextInt();
-        System.out.println("Type in your phone-number:");
-        String phoneNumber = scanner.next();
+        while (addMoreNumbers == 1){
+            System.out.println("Type in your phone-number:");
+            String subPhoneNumber = scanner.next();
+            System.out.println("Do you want to add more phone number to this user?");
+            System.out.println("1 = YES ---- 0 = NO");
+            phoneNumber  = phoneNumber.concat(subPhoneNumber + ", ");
+            addMoreNumbers = scanner.nextInt();
+        }
         System.out.println("Type in your street name:");
         String streetName = scanner.next();
         System.out.println("Type in your street number:");

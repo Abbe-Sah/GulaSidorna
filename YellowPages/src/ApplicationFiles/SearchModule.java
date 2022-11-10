@@ -42,7 +42,7 @@ public class SearchModule {
     }
 
 
-    public Profile firstNameSearch(ArrayList<ProfileInfo> profileList) {
+    public void firstNameSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name you would like to search for:");
         String fName = scanner.nextLine();
@@ -63,17 +63,17 @@ public class SearchModule {
             }
         }
         if (!foundProfile) {
-            System.out.println("Profile doesn't exist");
+            System.out.println("Could not find anyone with that name");
             System.out.println("---------------------------------------------");
         } else {
             if (Authentication.isAdmin) {
                 profileOperation();
             }
         }
-        return null;
+
     }
 
-    public Profile lastNameSearch(ArrayList<ProfileInfo> profileList) {
+    public void lastNameSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the LAST NAME you would like to search for:");
         String lName = scanner.nextLine();
@@ -93,17 +93,17 @@ public class SearchModule {
             }
         }
         if (!foundProfile) {
-            System.out.println("Profile doesn't exist");
+            System.out.println("Could not find anyone with that last name");
             System.out.println("---------------------------------------------");
         } else {
             if (Authentication.isAdmin) {
                 profileOperation();
             }
         }
-        return null;
+
     }
 
-    public Profile addressSearch(ArrayList<ProfileInfo> profileList) {
+    public void addressSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter STREET NAME you would like to search for:");
         String address = scanner.nextLine();
@@ -123,17 +123,17 @@ public class SearchModule {
             }
         }
         if (!foundProfile) {
-            System.out.println("Profile doesn't exist");
+            System.out.println("Could not find anyone with that address");
             System.out.println("---------------------------------------------");
         } else {
             if (Authentication.isAdmin) {
                 profileOperation();
             }
         }
-        return null;
+
     }
 
-    public Profile freeSearch(ArrayList<ProfileInfo> profileList) {
+    public void freeSearch(ArrayList<ProfileInfo> profileList) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter any thing to search for:");
         String freeSearch = scanner.nextLine();
@@ -156,14 +156,14 @@ public class SearchModule {
             }
         }
         if (!foundProfile) {
-            System.out.println("Profile doesn't exist");
+            System.out.println("Could not find anyone with that keyword");
             System.out.println("---------------------------------------------");
         } else {
             if (Authentication.isAdmin) {
                 profileOperation();
             }
         }
-        return null;
+
     }
 
     public void profileOperation() {
