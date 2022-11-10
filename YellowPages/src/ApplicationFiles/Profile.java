@@ -31,9 +31,17 @@ public class Profile {
         System.out.println("Update Age on userID:" + profileIndex + " from "
                 + profileList.get(profileIndex).getAge() + " to:");
         int age = scanner.nextInt();
-        System.out.println("Update PhoneNumber on userID:" + profileIndex + " from "
-                + profileList.get(profileIndex).getPhoneNumber() + " to:");
-        String phoneNumber = scanner.next();
+        int addMoreNumbers = 1;
+        String phoneNumber = " ";
+        while (addMoreNumbers == 1){
+            System.out.println("Update PhoneNumber on userID:" + profileIndex + " from "
+                    + profileList.get(profileIndex).getPhoneNumber() + " to:");
+            String subPhoneNumber = scanner.next();
+            System.out.println("Do you want to add more phone number to this user?");
+            System.out.println("1 = YES ---- 0 = NO");
+            phoneNumber  = phoneNumber.concat(subPhoneNumber + ", ");
+            addMoreNumbers = scanner.nextInt();
+        }
         System.out.println("Update Street name on userID:" + profileIndex + " from "
                 + profileList.get(profileIndex).getStreetName() + " to:");
         String streetName = scanner.next();
